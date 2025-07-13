@@ -5,23 +5,34 @@
     "height": 32, // Waybar height (to be removed for auto height)
     // Choose the order of the modules
     "modules-left": [
-        "clock"
+        "hyprland/workspaces"
     ],
     "modules-center": [
-        "sway/window"
+        "hyprland/window"
     ],
     "modules-right": [
         "cpu",
         "memory",
         "disk",
-        "pulseaudio"
+        "pulseaudio",
+        "clock"
     ],
     // Modules configuration
-    "sway/workspaces": {
+    "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
-        "format": "<span class='workspace'>{name}</span>",
-		"current-only": false
+        "warp-on-scroll": false,
+        "format": "{name}",
+        "format-icons": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
+            "urgent": "",
+            "focused": "",
+            "default": ""
+        }
     },
     "disk": {
         "format": "{percentage_used}% 󰋊"

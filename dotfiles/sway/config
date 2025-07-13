@@ -4,8 +4,8 @@
 #
 # Read `man 5 sway` for a complete reference.
 
-### Variables
-#
+# Startup commands
+exec swww-daemon
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
 # Home row direction keys, like vim
@@ -26,7 +26,6 @@ set $monitor2 HDMI-A-1
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/Pictures/Wallpapers/mountain.jpg fill
 #
 # Example configuration:
 #
@@ -64,10 +63,13 @@ gaps inner 10
 #
 # Basics:
 #
+	# Reload Waybar
+	bindsym $mod+r+Shift exec ~/.config/waybar/scripts/launch.sh
 	# Screenshots
 	bindsym $mod+p exec ~/.config/sway/scripts/capturearea.sh
 	bindsym $mod+p+Shift exec ~/.config/sway/scripts/captureactive.sh
 	bindsym $mod+p+Shift+Control exec ~/.config/sway/scripts/captureall.sh
+
     # Start a terminal
     bindsym $mod+Return exec $term
 
@@ -233,18 +235,18 @@ bindsym $mod+r mode "resize"
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
-bar {
-    position top
-
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    status_command while date +'%d/%m/%Y  %H:%M'; do sleep 1; done
-
-    colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
-}
-
-include /etc/sway/config.d/*
+#bar {
+#    position top
+#
+#    # When the status_command prints a new line to stdout, swaybar updates.
+#    # The default just shows the current date and time.
+#    status_command while date +'%d/%m/%Y  %H:%M'; do sleep 1; done
+#
+#    colors {
+#        statusline #ffffff
+#        background #323232
+#        inactive_workspace #32323200 #32323200 #5c5c5c
+#    }
+#}
+#
+#include /etc/sway/config.d/*

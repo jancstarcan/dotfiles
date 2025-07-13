@@ -1,6 +1,17 @@
--- KEYBINDS 
+-- KEYBINDS
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>cd", vim.cmd.Ex)
+
+vim.keymap.set("n", "<leader>m", function()
+	vim.cmd("w")
+	vim.cmd("!manim -pqh % --media_dir ~/Development/python/manim/media")
+end
+)
+
+vim.keymap.set("n", "<leader>h", function()
+	vim.cmd("DT")
+end
+)
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv") -- Alt Up/Down in vscode
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -11,7 +22,7 @@ vim.keymap.set("n", "N", "Nzzzv")
 
 -- paste and don't replace clipboard over deleted text
 vim.keymap.set("x", "<leader>p", [["_dP]])
-vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 
 -- sometimes in insert mode, control-c doesn't exactly work like escape
@@ -33,5 +44,5 @@ vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
 
 -- source file
 vim.keymap.set("n", "<leader><leader>", function()
-    vim.cmd("so")
+	vim.cmd("so")
 end)
